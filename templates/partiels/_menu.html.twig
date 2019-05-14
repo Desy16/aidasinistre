@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a href="{{ path('home') }}">
+		<img src="../images/logo.jpg" alt="logo aidasinistre" class="logo" style="height: 100px;"/>
+	</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+				<a class="nav-link {% if current_menu is defined and current_menu == 'particuliers' %} active {% endif %}" href="#">Particuliers <span class="sr-only">(current)</span></a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="">Professionnels</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">Entreprises</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="">Exploitants agricoles</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">Collectivités territoriales</a>
+			</li>
+
+    </ul>
+     
+  </div>
+</nav>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Aidasinistre - {% block title %} {% endblock %}</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <!--==================================================
+							HEADER	
+		 ==================================================-->
+
+        <!--==================================================
+							MENU
+		 ==================================================-->
+            
+        {% include ('partiels/_menu.html.twig') %}
+
+         <!--==================================================
+							BODY
+		 ==================================================-->
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+
+        <!--==================================================
+							FOOTER
+		 ==================================================-->
+        <footer class="mt-5 mb-5">
+            {% include ('partiels/_footer.html.twig') %}
+        </footer>
+		
+
+        <!--==================================================
+							FICHIER(JQUERY & POPPER)
+		 ==================================================-->
+        <script src="/js/jquery.js"></script>
+		<script src="/js/popper.js"></script>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
