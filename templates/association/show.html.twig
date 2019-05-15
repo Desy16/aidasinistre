@@ -13,6 +13,14 @@
                 <h2>{{ asso.name }}</h2>
                 <h3>{{ asso.address}} - {{ asso.postalCode}} {{ asso.city}}</h3>
                     <a href="#" class="btn btn-primary">Contacter l'association</a>
+                
+                {{ form_start(form_contact)}}
+
+                    {{ form_widget(form_contact)}}
+
+                    <button type="submit" class="btn btn-primary">Envoyer </button>
+
+                {{ form_end(form_contact)}}
             </div>
         </div>
 	</div>
