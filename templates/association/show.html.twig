@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ asso.name }}
+{% endblock %}
+
+{% block body %}
+
+<div class="jumbotron">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>{{ asso.name }}</h2>
+                <h3>{{ asso.address}} - {{ asso.postalCode}} {{ asso.city}}</h3>
+                    <a href="#" class="btn btn-primary">Contacter l'association</a>
+            </div>
+        </div>
+	</div>
+</div>
+
+{% endblock %}

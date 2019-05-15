@@ -11,24 +11,26 @@
   <div class="collapse navbar-collapse" id="navbarColor03">
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-				<a class="nav-link {% if current_menu is defined and current_menu == 'particuliers' %} active {% endif %}" href="#">Particuliers <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+				{% set url = path('associations_index') %}
+
+				<a class="nav-link" href="{{ url }}">Particuliers <span class="sr-only">(current)</span></a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="">Professionnels</a>
+				<a class="nav-link" href="{{ url }}">Professionnels</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link disabled" href="#">Entreprises</a>
+				<a class="nav-link" href="{{ url }}">Entreprises</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="">Exploitants agricoles</a>
+				<a class="nav-link" href="{{ url }}">Exploitants agricoles</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link disabled" href="#">Collectivités territoriales</a>
+				<a class="nav-link" href="{{ url }}">Collectivités territoriales</a>
 			</li>
 
     </ul>

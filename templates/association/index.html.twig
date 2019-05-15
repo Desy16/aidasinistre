@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les associations {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center">Les associations presentes</h1>
+        <div class="row">
+            {% for asso in assos %}
+                {% include 'association/_association.html.twig' %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

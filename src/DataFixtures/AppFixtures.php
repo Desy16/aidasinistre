@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use Faker\Factory;
 use App\Entity\Article;
+use App\Entity\Association;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -30,6 +31,22 @@ class AppFixtures extends Fixture
                     ->setIntroduction($introduction);
     
             $manager->persist($article);
+
+            $assos = new Association();
+
+            $name = $faker->sentence(8);
+            $city = $faker->city();
+            $address = $faker->address();
+            $postalCode = $faker->postcode();
+            $phone = $faker->e164PhoneNumber();
+
+            $assos->setName($name)
+                  ->setCity($city)
+                  ->setAddress($address)
+                  ->setPostalCode($postalCode)
+                  ->setPhone($phone);
+
+            $manager->persist($assos);
         }
 
         $manager->flush();
