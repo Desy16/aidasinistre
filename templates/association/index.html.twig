@@ -7,6 +7,17 @@
     <div class="container">
         <h1 class="text-center">Les associations presentes</h1>
         <div class="row">
+            <div class="form-row">
+                <div class="col">
+                    {{ form_start(form_recherche)}}
+                        {{ form_widget(form_recherche)}}
+                    {{ form_end(form_recherche)}}
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" class="text-align-center"> Rechercher</button>
+                </div>
+            </div>
             {% for asso in assos %}
                 {% include 'association/_association.html.twig' %}
             {% endfor %}

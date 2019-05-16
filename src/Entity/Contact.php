@@ -65,6 +65,37 @@ class Contact
      * @Assert\NotBlank()
      */
     private $sinister;
+    
+    
+    /**
+     * @var Association|null
+     */
+    private $association;
+
+    /**
+     * Get the value of association
+     *
+     * @return  Association|null
+     */ 
+    public function getAssociation()
+    {
+        return $this->association;
+    }
+
+    /**
+     * Set the value of association
+     *
+     * @param  Association|null
+     *
+     * @return  self
+     */ 
+    public function setAssociation($association)
+    {
+        $this->association = $association;
+
+        return $this;
+    }
+    
 
     public function getId(): ?int
     {

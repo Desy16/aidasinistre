@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Association;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\AssociationSearch;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Association|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +19,35 @@ class AssociationRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Association::class);
     }
+
+    /**
+     * Permet de récuperer tout ce qui est visible
+    *  
+    */
+    public function findAllVisibleQuery(AssociationSearch $search)
+    {
+        
+  
+        return $this->findVisibleQuery()
+                    ->where('a.city LIKE :city')
+                    ->setParameter('city', $search->getCity())
+                    ->orderBy('a.city')
+                    ->setMaxResults(2)
+                    ->getQuery()
+                    ->execute()
+                    ;
+
+           /*  return $this->findVisibleQuery()
+                        ->getQuery(); */
+
+    }
+
+    private function findVisibleQuery()
+    {
+        # code...
+        return $this->createQueryBuilder('a');
+    }
+
 
     // /**
     //  * @return Association[] Returns an array of Association objects
