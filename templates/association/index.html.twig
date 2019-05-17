@@ -5,19 +5,34 @@
 {% block body %}
 
     <div class="container">
+        <div class="jumbotron">
+            <h1>Procedure</h1>
+            
+            <h2>un texte explicatif</h2>
+                <p>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id debitis, modi consequuntur dolorum eius fugiat, facere, temporibus pariatur laudantium minima explicabo. Error, beatae eaque laudantium sit? Quibusdam possimus eligendi magni.</span>
+                    <span>Quisquam voluptas vitae, odit dolor provident deleniti vero, magni, repellat voluptatibus rerum nisi nemo nostrum esse! Illo beatae recusandae asperiores neque, quod aliquid odio doloribus quia, id, modi eius. Molestiae!</span>
+                    <span>Alias aspernatur, ea atque. Expedita iste aut similique assumenda, quaerat obcaecati asperiores illo ad rem ducimus voluptatum saepe officiis eius temporibus, provident unde! Officiis ducimus, quae reiciendis esse facilis dignissimos!</span>
+                    <span>Consequuntur cum illo sapiente nam, quis commodi, voluptas ipsum culpa distinctio, aliquid, eos atque nihil dolores! Numquam, error. Consequuntur nobis aliquid facilis debitis explicabo veritatis molestiae eius ullam, fugiat ipsa.</span>
+                    <span>Minus enim placeat ipsam obcaecati porro architecto suscipit dolorum culpa, ullam error, nihil cupiditate, rem facere harum. Optio explicabo asperiores unde cupiditate aliquam aperiam nihil, non, tempora, adipisci odio deleniti.</span>
+                </p>
+	    </div>
+
         <h1 class="text-center">Les associations presentes</h1>
         <div class="row">
-            <div class="form-row">
-                <div class="col">
+            {# <div class="form-row">
+                <div class="">
                     {{ form_start(form_recherche)}}
                         {{ form_widget(form_recherche)}}
                     {{ form_end(form_recherche)}}
                 </div>
 
-                <div class="form-group">
+                <div class="">
                     <button type="submit" class="btn btn-primary" class="text-align-center"> Rechercher</button>
                 </div>
-            </div>
+            </div> #}
+
+
             {% for asso in assos %}
                 {% include 'association/_association.html.twig' %}
             {% endfor %}

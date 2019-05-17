@@ -50,7 +50,7 @@ class Contact
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
-     * @Assert\Length(min=10, max=100)
+     * @Assert\Length(min=10, max=100, minMessage="Votre message ne doit pas faire moins de trois lettres")
      */
     private $message;
 

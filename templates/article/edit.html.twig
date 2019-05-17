@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Edition d'un article {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center">Modifier l'article : {{ article.title }}</h1>
+        <div class="row">
+            <div class="col-md-8">
+                {{ form_start(form_edit)}}
+                    {{ form_row(form_edit.title)}}
+                    {{ form_row(form_edit.slug)}}
+                    {{ form_row(form_edit.introduction)}}
+                    {{ form_row(form_edit.content)}}
+                    {{ form_row(form_edit.coverImage)}}
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Enregistrer les modifications de l'article</button>
+                    </div>
+
+                {{ form_end(form_edit)}}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

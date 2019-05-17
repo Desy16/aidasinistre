@@ -4,10 +4,16 @@ namespace App\Entity;
 
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  * @ORM\HasLifecycleCallbacks
+ * @UniqueEntity(
+ * fields={"title"},
+ * message="Ce titre à déja été crée"
+ * )
  */
 class Article
 {
@@ -20,21 +26,29 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=10, max=50, minMessage="Votre titre ne doit pas faire moins de dix lettres")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
+     * @Assert\Length(min=10, max=100, minMessage="Votre contenu ne doit pas faire moins de dix lettres")
      */
     private $content;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Url()
      */
     private $coverImage;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=100, minMessage="Votre url ne doit pas faire moins de trois lettres")
      */
     private $slug;
 
@@ -45,6 +59,8 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=100, minMessage="Votre introduction ne doit pas faire moins de trois lettres")
      */
     private $introduction;
 

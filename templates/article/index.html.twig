@@ -8,14 +8,17 @@
     <div class="container">
         <div class="row">
         {% for article in articles %}
-            
             {% set url = path('articles_show', {'slug' : article.slug}) %}
+
                 <div class="col-md-4 mb-3">
                     <div class="card bg-light">
                         <img src="{{ article.coverImage }}" alt="Avatar de l'actualité 1" style="height: 200px; width: 100%; display: block;">
                         <div class="card-body">
                             <a href="{{ url }}">
                                 <h4 class="card-title">{{ article.title }}</h4>
+                                <div class="metadata">
+                                    Ecrit le {{ article.createAt | date('d/m/y') }} à {{ article.createAt | date('H:i')}}
+                                </div>
                             </a>
                             <p class="card-text">{{ article.introduction}}</p>
                             <a href="{{ url }}" class="btn btn-info">En savoir plus...</a>

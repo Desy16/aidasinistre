@@ -25,7 +25,7 @@ class ContactType extends AbstractType
             ->add('sinister', ChoiceType::class, $this->getConfigurationSinistre())
         ;
 
-
+        
 
     }
 
