@@ -1,0 +1,47 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modification de l'article numéro {{ article.id}}{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center my-5">Modification l'article : {{ article.title }}</h1>
+        
+                {{ form_start(form_edit)}}
+                    <div class="row">
+                        <div class="col">
+                            <div class="alert alert-light">
+                                <h1>
+                                    <i class="fas fa-info-circle"></i>
+                                    Informations générales
+                                </h1>
+                                <hr>
+                                {{ form_row(form_edit.title)}}
+                                {{ form_row(form_edit.slug)}}
+                                {{ form_row(form_edit.introduction)}}
+                            </div>
+                        </div>
+                            
+                        <div class="alert alert-light">
+                            <div class="col">
+                                <h1>Details de l'article</h1>
+                                <hr>
+                                {{ form_row(form_edit.content)}}
+                                {{ form_row(form_edit.coverImage)}}
+                            </div>
+                        </div>
+                    </div>
+
+                   <div class="alert alert-secondary clearfix">
+                        <h2 class="alert-heading">Modifier un article</h2>
+                        <p>Vous êtes sur le point de modifier l'article : <strong>{{ article.title }}</strong></p>
+                        <button type="submit" class="btn btn-primary float-right" onClick="return confirm(`Etes vous sur de vouloir modifier l'article : {{ article.title }}`)">
+                            <i class="fas fa-save"></i>
+                            Enregistrer les modifications de l'article
+                        </button>
+                    </div>
+                {{ form_end(form_edit)}}
+    </div>
+
+
+{% endblock %}
