@@ -65,6 +65,12 @@ class Article
     private $introduction;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
+
+    /**
      * Permet d'initialiser le slug !
      * 
      * @ORM\PrePersist
@@ -155,6 +161,18 @@ class Article
     public function setIntroduction(string $introduction): self
     {
         $this->introduction = $introduction;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

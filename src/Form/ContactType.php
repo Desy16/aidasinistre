@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Contact;
-use Symfony\Component\Form\AbstractType;
+use App\Form\ApplicationType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class ContactType extends AbstractType
+class ContactType extends ApplicationType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -25,8 +25,6 @@ class ContactType extends AbstractType
             ->add('sinister', ChoiceType::class, $this->getConfigurationSinistre())
         ;
 
-        
-
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -36,20 +34,6 @@ class ContactType extends AbstractType
         ]);
     }
 
-    /**
-     * Permet la configuration de base d'un champ !
-     * 
-     * @param $label
-     * @param $placeholder
-     * @return array
-     */
-    private function getConfiguration($label, $placeholder)
-    {
-       return [
-        'label' => $label,
-        'attr' => ['placeholder' => $placeholder]
-       ];
-    }
 
     /**
      * Permet la configuration du champ Sinistre !

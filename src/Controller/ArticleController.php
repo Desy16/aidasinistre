@@ -6,10 +6,12 @@ use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Security;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Doctrine\Common\Persistence\ObjectManager;
 
 class ArticleController extends AbstractController
 {
@@ -35,6 +37,7 @@ class ArticleController extends AbstractController
      * 
      * @Route("/actualites/new", name="articles_create")
      * 
+     * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
     public function create(Request $request, ObjectManager $manager)
@@ -70,6 +73,7 @@ class ArticleController extends AbstractController
      * 
      * @Route("/actualites/{slug}/edit", name="articles_edit")
      * 
+     * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
     public function edit(Article $article, Request $request, ObjectManager $manager)
