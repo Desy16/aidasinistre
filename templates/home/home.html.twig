@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container">
         <div class="jumbotron bg-light mt-5">
-            <h1 class="display-3">Bienvenue chez AIDASINISTRE</h1>
+            <h1 class="display-3">Bienvenue chez <span>aidasinistre</span></h1>
             <p class="lead">Voila comment nous allons faire face ensemble</p>
             <hr class="my-4">
             <p>Grâce à ce site web et plus tard à notre application mobile, nous offrons aux personnes victimes d’un sinistre de les aider à surmonter ces moments difficiles en les mettant en relation avec des associations d'aide aux victimes, des sociétés d'assistance, des prestataires de services.</p>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="container">
-        <h2 class="h1 text-center mt-5 mb-5" >Actualités</h2>
+        <h2 class="h1 text-center mt-5 mb-5" >Actualites</h2>
         <div class="row">
             {# {% for ($i = 1; i <= articles.l; $i++ ) %} #}
                 <div class="col-md-4 mb-3">
@@ -50,90 +50,100 @@
                 </div>
             </div>
         </div>
+    </div>
+
+        <div class="text-center">
+            <a href="{{ path('articles_index') }}" class="btn btn-info mt-5 mb-5">Voir toute l'actualité</a>
+        </div>
+            
+        <h2 class="h1 text-center mt-5 mb-5">A propos de nous</h2>
         
-    <div class="text-center">
-        <a href="{{ path('articles_index') }}" class="btn btn-info mt-5 mb-5">Voir toute l'actualité</a>
-    </div>
-        
-    <h2 class="h1 text-center mt-5 mb-5">A propos de nous</h2>
+        <div class="container">
+            <div class="row mb-3">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum possimus quae eligendi ratione molestiae iure, quis voluptatum porro a quidem dolores alias quia labore dolorem aut vero dolorum ad quibusdam qui ab. Dicta asperiores, ipsa numquam expedita, itaque nihil sequi fuga doloribus cumque eligendi aliquid non. Totam quae voluptate distinctio necessitatibus, laborum dignissimos porro nostrum, quia suscipit, ratione temporibus et.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum possimus quae eligendi ratione molestiae iure, quis voluptatum porro a quidem dolores alias quia labore dolorem aut vero dolorum ad quibusdam qui ab. Dicta asperiores, ipsa numquam expedita, itaque nihil sequi fuga doloribus cumque eligendi aliquid non. Totam quae voluptate distinctio necessitatibus, laborum dignissimos porro nostrum, quia suscipit, ratione temporibus et.
+                </p>
+            </div>
+        </div>
 
-    <div class="row mb-3">
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum possimus quae eligendi ratione molestiae iure, quis voluptatum porro a quidem dolores alias quia labore dolorem aut vero dolorum ad quibusdam qui ab. Dicta asperiores, ipsa numquam expedita, itaque nihil sequi fuga doloribus cumque eligendi aliquid non. Totam quae voluptate distinctio necessitatibus, laborum dignissimos porro nostrum, quia suscipit, ratione temporibus et.
-        </p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-3">
-            <img src="https://picsum.photos/1000/400" style="height: 350px; width: 100%; display: block;" alt="image de l'actualité">
-        </div>
-        <div class="col-md-3">
-            <div class="card bg-light">
-                <div class="card-header text-center">
-                    <strong>Lorem ipsum dolor sit amet consectetur</strong>
-                </div>
-                <hr class="my-1">
-                <div class="card-body mb-5">
-                    <p class="card-text text-center">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem, facere nisi, eveniet delectus iusto, possimus totam recusandae tenetur quasi cupiditate ea repellendus.
-                    </p>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="https://picsum.photos/1000/400" style="height: 350px; width: 100%; display: block;" alt="image de l'actualité">
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-header text-center">
+                        <strong>Lorem ipsum dolor sit amet consectetur</strong>
+                    </div>
+                    <hr class="my-1">
+                    <div class="card-body mb-5">
+                        <p class="card-text text-center">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem, facere nisi, eveniet delectus iusto, possimus totam recusandae tenetur quasi cupiditate ea repellendus.
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem,
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <img src="https://picsum.photos/1000/400?random?random" style="height: 350px; width: 100%; display: block;" alt="image de l'actualité">
-        </div>
-        <div class="col-md-3">
-            <div class="card bg-light">
-                <div class="card-header text-center">
-                    <strong>Lorem ipsum dolor sit amet consectetur</strong>
-                </div>
-                <hr class="my-1">
-                <div class="card-body mb-5">
-                    <p class="card-text text-center">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem, facere nisi, eveniet delectus iusto, possimus totam recusandae tenetur quasi cupiditate ea repellendus.
-                    </p>
-                </div>
+            <div class="col-md-3">
+                <img src="https://picsum.photos/1000/400?random?random" style="height: 350px; width: 100%; display: block;" alt="image de l'actualité">
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card bg-light">
-                <div class="card-header text-center">
-                    <strong>Lorem ipsum dolor sit amet consectetur</strong>
-                </div>
-                <hr class="my-1">
-                <div class="card-body mb-5">
-                    <p class="card-text text-center">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem, facere nisi, eveniet delectus iusto, possimus totam recusandae tenetur quasi cupiditate ea repellendus.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <img src="https://picsum.photos/1000/400?random" style="height: 350px; width: 100%; display: block;" alt="image de l'actualité">
-        </div>
-        <div class="col-md-3">
-            <div class="card bg-light">
-                <div class="card-header text-center">
-                    <strong>Lorem ipsum dolor sit amet consectetur</strong>
-                </div>
-                <hr class="my-1">
-                <div class="card-body mb-5">
-                    <p class="card-text text-center">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem, facere nisi, eveniet delectus iusto, possimus totam recusandae tenetur quasi cupiditate ea repellendus.
-                    </p>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-header text-center">
+                        <strong>Lorem ipsum dolor sit amet consectetur</strong>
+                    </div>
+                    <hr class="my-1">
+                    <div class="card-body mb-5">
+                        <p class="card-text text-center">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem, facere nisi, eveniet delectus iusto, possimus totam recusandae tenetur quasi cupiditate ea repellendus.
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem,
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <img src="https://picsum.photos/1000/400?image=50" style="height: 350px; width: 100%; display: block;" alt="image de l'actualité">
-        </div>
-    </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-header text-center">
+                        <strong>Lorem ipsum dolor sit amet consectetur</strong>
+                    </div>
+                    <hr class="my-1">
+                    <div class="card-body mb-5">
+                        <p class="card-text text-center">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem, facere nisi, eveniet delectus iusto, possimus totam recusandae tenetur quasi cupiditate ea repellendus.
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem,
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="https://picsum.photos/1000/400?random" style="height: 350px; width: 100%; display: block;" alt="image de l'actualité">
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-header text-center">
+                        <strong>Lorem ipsum dolor sit amet consectetur</strong>
+                    </div>
+                    <hr class="my-1">
+                    <div class="card-body mb-5">
+                        <p class="card-text text-center">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem, facere nisi, eveniet delectus iusto, possimus totam recusandae tenetur quasi cupiditate ea repellendus.
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, quos? Est veniam voluptatibus voluptatem explicabo tempora autem,
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-    <h2 class="h1 text-center mt-5 mb-5">Nos partenaires</h2>
+            <div class="col-md-3">
+                <img src="https://picsum.photos/1000/400?image=50" style="height: 350px; width: 100%; display: block;" alt="image de l'actualité">
+            </div>
+        </div>
+
+    <div class="container">
+        <h2 class="h1 text-center mt-5 mb-5">Nos partenaires</h2>
 
         <div class="row">
             <div class="col-md-2">

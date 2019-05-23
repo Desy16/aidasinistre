@@ -60,10 +60,6 @@ class AppFixtures extends Fixture
             $users[] = $user;
         }
 
-       
-       
-        
-
         //Nous gérons les articles
         for($i = 1; $i <= 10; $i++)
         {

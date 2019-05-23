@@ -3,29 +3,42 @@
 {% block title %} Actualités {% endblock %}
 
 {% block body %}
-    <h1 class="text-center my-3">Actualité</h1>
+    <div class="ad-title" style="background-image: url('../images/actu.jpg')">
+        <h1 class="text-center my-3">Actualité</h1>
+    </div>
+
+    <div class="container">
+        <p class="text-center">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quia amet officiis expedita facilis quidem exercitationem velit. Mollitia nobis aspernatur, cumque rerum eius provident sit est tenetur deleniti illum dolor.Eveniet ea laboriosam vero.
+        </p>
+    </div>
 
     <div class="container">
         <div class="row">
-        {% for article in articles %}
-            {% set url = path('articles_show', {'slug' : article.slug}) %}
+            {% for article in articles %}
+                {% set url = path('articles_show', {'slug' : article.slug}) %}
 
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-light">
-                        <img src="{{ article.coverImage }}" alt="Avatar de l'actualité 1" style="height: 200px; width: 100%; display: block;">
-                        <div class="card-body">
-                            <a href="{{ url }}">
-                                <h4 class="card-title">{{ article.title }}</h4>
-                                <div class="metadata">
-                                    Ecrit le {{ article.createAt | date('d/m/y') }} à {{ article.createAt | date('H:i')}}
-                                </div>
-                            </a>
-                            <p class="card-text">{{ article.introduction}}</p>
-                            <a href="{{ url }}" class="btn btn-info">En savoir plus...</a>
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-light">
+                            <img src="{{ article.coverImage }}" alt="Avatar de l'actualité 1" style="height: 200px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <a href="{{ url }}">
+                                    <h4 class="card-title">{{ article.title }}</h4>
+                                    <div class="metadata">
+                                        Ecrit le {{ article.createAt | date('d/m/y') }} à {{ article.createAt | date('H:i')}}
+                                    </div>
+                                </a>
+                                <p class="card-text">{{ article.introduction}}</p>
+                                <a href="{{ url }}" class="btn btn-info">En savoir plus...</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-        {% endfor %}
+            {% endfor %}
         </div>
+
+        <div class="text-center">
+            <a href="#" class="btn btn-info mt-5 mb-5">Charger plus d'actualités</a>
+        </div>
+
     </div>
 {% endblock %}

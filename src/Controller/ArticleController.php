@@ -32,12 +32,13 @@ class ArticleController extends AbstractController
         ]);
     }
 
+    /* @IsGranted("ROLE_ADMIN") */
+
     /**
      * Permet d'afficher le formulaire de création
      * 
      * @Route("/actualites/new", name="articles_create")
      * 
-     * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
     public function create(Request $request, ObjectManager $manager)

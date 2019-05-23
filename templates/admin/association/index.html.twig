@@ -1,0 +1,49 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Administration des associations {% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <h1 class="my-5 text-center">Administration des associations </h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Slug</th>
+                <th>Adresse</th>
+                <th>Code postale</th>
+                <th>Ville</th>
+                <th>Téléphone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+{# {{ path('admin_association_edit', {'id': association.id}) }}
+{{ path('admin_association_delete', {'id': association.id}) }} #}
+        
+        <tbody>
+            {% for association in paginator.data %}
+                <tr>
+                    <td>{{ association.id }}</td>
+                    <td>{{ association.name }}</td>
+                    <td>{{ association.slug }}</td>
+                    <td>{{ association.address }}</td>
+                    <td>{{ association.postalCode }}</td>
+                    <td>{{ association.city }}</td>
+                    <td>{{ association.phone }}</td>
+                    <td>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-plus-circle"></i></a>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                        <a href="#" class="btn btn-danger" onClick="return confirm(`Etes vous sur de vouloir supprimer l'association : {{ association.name }}`)"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% include 'admin/partiels/_pagination.html.twig' with {'route': 'admin_associations_index'} %}
+</div>
+    
+{% endblock %}

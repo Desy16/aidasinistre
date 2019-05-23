@@ -1,15 +1,60 @@
-    div.ad-title h1,
-    div.ad-title p {
-        color: white;
-        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-    }
-    
-    div.ad-title {
-        padding: 2em;
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    div.container {
-        margin-top: 20px;
-    }
+            div.ad-title h1,
+            div.ad-title p {
+                color: white;
+                text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+            }
+            
+            div.ad-title {
+                padding: 10em;
+                background-size: cover;
+                background-position: center center;
+            }
+            
+            div.container {
+                margin-top: 20px;
+            }
+            
+            span,
+            h2.h1 {
+                text-transform: uppercase;
+            }
+            
+            ul li {
+                list-style: none;
+            }
+            
+            * {
+                user-select: none;
+            }
+            
+            .navbar-nav li {
+                text-transform: uppercase;
+            }
+            
+            .navbar-nav li a:link,
+            .navbar-nav li a:visited {
+                padding: 8px 0;
+                color: #555;
+                border-top: 2px solid transparent;
+                transition: border-top 0.2s;
+            }
+            
+            .navbar-nav li a:hover,
+            .navbar-nav li a:active {
+                border-top: 2px solid #0C4D56;
+            }
+            
+            .sticky {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 2px 2px #efefef;
+                z-index: 9999;
+            }
+            
+            .sticky .navbar-nav li a:link,
+            .sticky .navbar-nav li a:visited {
+                color: #555;
+            }

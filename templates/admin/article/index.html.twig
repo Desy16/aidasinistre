@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="container-fluid">
-    <h1 class="my-5 text-center">Gestion des articles </h1>
+    <h1 class="my-5 text-center">Administration des articles </h1>
 
     <table class="table table-hover">
         <thead>
@@ -20,7 +20,7 @@
         </thead>
 
         <tbody>
-            {% for article in articles %}
+            {% for article in paginator.data %}
                 <tr>
                     <td>{{ article.id }}</td>
                     <td>{{ article.title }}</td>
@@ -29,6 +29,7 @@
                     <td>{{ article.content }}</td>
                     <td>{{ article.coverImage }}</td>
                     <td>
+                        <a href="{{ path('admin_articles_create') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i></a>
                         <a href="{{ path('admin_articles_edit', {'id': article.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                         <a href="{{ path('admin_articles_delete', {'id': article.id}) }}" class="btn btn-danger" onClick="return confirm(`Etes vous sur de vouloir supprimer l'article : {{ article.title }}`)"><i class="fas fa-trash"></i></a>
                     </td>
@@ -36,6 +37,9 @@
             {% endfor %}
         </tbody>
     </table>
+
+    {% include 'admin/partiels/_pagination.html.twig' with {'route': 'admin_articles_index'} %}
+    {# {{ paginator.display() }} #}
 </div>
     
 {% endblock %}
