@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Service\Paginator;
 use App\Entity\Association;
 use App\Entity\AssociationSearch;
 use App\Form\AssociationSearchType;
@@ -19,23 +20,25 @@ class AssociationController extends AbstractController
     /**
      * Permet d'afficher la liste des associations
      * 
-     * @Route("/associations", name="associations_index")
+     * @Route("/associations/{page<\d+>?1>}", name="associations_index")
      */
-    public function index(AssociationRepository $repo, Request $request)
+    public function index(AssociationRepository $repo, $page, Request $request, Paginator $paginator)
     {
-        $search = new AssociationSearch();
+       /*  $search = new AssociationSearch();
 
         $form = $this->createForm(AssociationSearchType::class, $search);
         $form->handleRequest($request);
+        'form_recherche' => $form->createView(),
 
         $repo = $this->getDoctrine()->getRepository(Association::class);
-
-        $assos = $repo->findAll();
+ */
+        $paginator->setEntityClass(Association::class)
+                  ->setLimit(2);
+                  
+        /* $assos = $repo->findAll(); */
 
         return $this->render('association/index.html.twig', [
-            'controller_name' => 'AssociationController',
-            'form_recherche' => $form->createView(),
-            'assos' => $assos
+            'paginator' => $paginator
         ]);
     }
     /**

@@ -6,7 +6,6 @@ use App\Entity\User;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Service\Paginator;
-use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,7 +20,7 @@ class AdminArticleController extends AbstractController
      * @Route("/admin/articles/{page<\d+>?1}", name="admin_articles_index")
      * 
      */
-    public function index(ArticleRepository $repo, $page, Paginator $paginator)
+    public function index($page, Paginator $paginator)
     {
         $paginator->setEntityClass(Article::class)
                   ->setLimit(2)
@@ -38,7 +37,7 @@ class AdminArticleController extends AbstractController
      * @Route("/admin/articles/{id}/edit", name="admin_articles_edit")
      * 
      */
-    public function edit(Article $article, ArticleRepository $repo, Request $request, ObjectManager $manager)
+    public function edit(Article $article, Request $request, ObjectManager $manager)
     {
          
         $form = $this->createForm(ArticleType::class, $article);

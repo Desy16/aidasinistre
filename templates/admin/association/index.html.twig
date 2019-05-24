@@ -19,9 +19,6 @@
                 <th>Actions</th>
             </tr>
         </thead>
-
-{# {{ path('admin_association_edit', {'id': association.id}) }}
-{{ path('admin_association_delete', {'id': association.id}) }} #}
         
         <tbody>
             {% for association in paginator.data %}
@@ -34,9 +31,9 @@
                     <td>{{ association.city }}</td>
                     <td>{{ association.phone }}</td>
                     <td>
-                        <a href="#" class="btn btn-primary"><i class="fas fa-plus-circle"></i></a>
-                        <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                        <a href="#" class="btn btn-danger" onClick="return confirm(`Etes vous sur de vouloir supprimer l'association : {{ association.name }}`)"><i class="fas fa-trash"></i></a>
+                        <a href="{{ path('admin_association_create') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i></a>
+                        <a href="{{ path('admin_association_edit', {'id': association.id }) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                        <a href="{{ path('admin_association_delete', {'id': association.id })}}" class="btn btn-danger" onClick="return confirm(`Etes vous sur de vouloir supprimer l'association : {{ association.name }}`)"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
             {% endfor %}

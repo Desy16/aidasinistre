@@ -8,32 +8,32 @@
   <div class="collapse navbar-collapse" id="navbarColor03">
 
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item-admin">
 				<a class="nav-link" href="#">AidaSinistre ! <span class="sr-only">(current)</span></a>
 			</li>
 
-      <li class="nav-item">
+      <li class="nav-item-admin">
 				<a class="nav-link" href="#">
 					<i class="fas fa-chart-line"></i>
 					Dashboard 
 				</a>
 			</li>
 
-			<li class="nav-item">
+			<li class="nav-item-admin">
 				<a class="nav-link" href="{{path('admin_articles_index')}}">
 					<i class="fas fa-newspaper"></i>
 					Articles
 				</a>
 			</li>
 
-			<li class="nav-item">
+			<li class="nav-item-admin">
 				<a class="nav-link" href="{{path('admin_associations_index')}}">
 				<i class="fas fa-hands-helping"></i>
 				Associations
 				</a>
 			</li>
 
-			<li class="nav-item">
+			<li class="nav-item-admin">
 				<a class="nav-link" href="{{path('admin_contacts_index')}}">
 				<i class="fas fa-id-card"></i>
 				Contacts
@@ -44,19 +44,19 @@
 
 		<ul class="navbar-nav ml-auto">
 				{% if app.user %}
-					<li class="nav-item">
+					<li class="nav-item-admin">
 							<a href="{{ path('admin_account_logout')}}" class="nav-link">
 							<i class="fas fa-sign-out-alt"></i>
 							Deconnexion
 							</a>
 					</li>
 			{% else %}
-					<li class="nav-item">
+					<li class="nav-item-admin">
 							<a href="{{ path('admin_account_login')}}" class="nav-link">Connexion</a>
 					</li>
 			{% endif %}
 			
-      <li class="nav-item">
+      <li class="nav-item-admin">
 				<a class="nav-link" href="{{ path('home') }}" target="_blank">
 					<i class="fas fa-eye"></i>
 					Voir le site

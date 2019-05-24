@@ -16,11 +16,11 @@ class ContactType extends ApplicationType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('lastName', TextType::class, $this->getConfiguration("Votre nom", "Ex: Dupont"))
-            ->add('firstName', TextType::class, $this->getConfiguration("Votre prenom", "Ex: Paul"))
-            ->add('phone', TextType::class, $this->getConfiguration("Votre numero de telephone", "Ex: 0780845716"))
-            ->add('email', EmailType::class, $this->getConfiguration("Votre email", "paul.Dupont@gmail.com"))
-            ->add('message', TextareaType::class, $this->getConfiguration("Votre Message", "Ex...."))
+            ->add('lastName', TextType::class, $this->getConfiguration("Nom", "BRACQUART"))
+            ->add('firstName', TextType::class, $this->getConfiguration("Prenom", "Remi"))
+            ->add('phone', TextType::class, $this->getConfiguration("Telephone", "0780845716"))
+            ->add('email', EmailType::class, $this->getConfiguration("Email", "vous@aidasinistre.com"))
+            ->add('message', TextareaType::class, $this->getConfiguration("Message", "Ex...."))
             ->add('qualification', ChoiceType::class, $this->getConfigurationQualif())
             ->add('sinister', ChoiceType::class, $this->getConfigurationSinistre())
         ;
@@ -45,7 +45,7 @@ class ContactType extends ApplicationType
        [
             'choices' => [
 
-               '--Veuillez choisir un sinistre--' => 'choix',
+               '--Veuillez choisir un sinistre--' => 'null',
 
                 'Evenements climatiques' => [
                    'Tempête' => 'tempete',
@@ -75,7 +75,7 @@ class ContactType extends ApplicationType
        [
             'choices' => [
 
-               '--Veuillez choisir Votre qualification--' => 'choix',
+               '--Veuillez choisir une qualification--' => 'null',
                
                'Particuliers' => 'particulier',
                'Professionnels' => 'professionnel',

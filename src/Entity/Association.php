@@ -49,7 +49,7 @@ class Association
     private $slug;
 
     /**
-     * Permet d'initialiser le slug
+     * Permet d'initialiser le slug de l'association
      * 
      * @ORM\PrePersist
      * @ORM\PreUpdate

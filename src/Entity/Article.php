@@ -71,7 +71,7 @@ class Article
     private $author;
 
     /**
-     * Permet d'initialiser le slug !
+     * Permet d'initialiser le slug de l'article
      * 
      * @ORM\PrePersist
      * @ORM\PreUpdate

@@ -1,0 +1,52 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Creation d'une association {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center my-5">Créer une association</h1>
+
+            {{ form_start(form_association)}}
+                
+                    
+                        <div class="alert alert-light">
+                            <h2 class="text-center">
+                                <i class="fas fa-info-circle"></i>
+                                Informations de l'association
+                            </h2>
+
+                            <div class="row">
+                                <div class="col">
+                                    <hr>
+                                    {{ form_row(form_association.name)}}
+                                    {{ form_row(form_association.address)}}
+                                    {{ form_row(form_association.postalCode)}}
+                                </div>
+                                
+                                <div class="col">
+                                    <hr>
+                                    {{ form_row(form_association.city)}}
+                                    {{ form_row(form_association.phone)}}
+                                </div>
+                        </div>
+
+                    </div>
+
+                   
+                
+                
+                <div class="alert alert-success clearfix">
+                    <h2 class="alert-heading">Sauvegarder une association</h2>
+                    <p>Vous êtes sur le point de créer une association</p>
+                    <button type="submit" class="btn btn-primary float-right">
+                        <i class="fas fa-check"></i>
+                        Créer une nouvelle association
+                    </button>
+                </div>
+            {{ form_end(form_association)}}
+        
+    </div>
+
+
+{% endblock %}

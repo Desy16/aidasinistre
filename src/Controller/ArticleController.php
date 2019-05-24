@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
+use App\Service\Paginator;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
@@ -18,17 +19,19 @@ class ArticleController extends AbstractController
     /**
      * Permet d'afficher la liste des articles donc l'actualité
      * 
-     * @Route("/actualites", name="articles_index")
+     * @Route("/actualites/{page<\d+>?1}", name="articles_index")
      */
-    public function index(ArticleRepository $repo)
+    public function index(ArticleRepository $repo, $page, Paginator $paginator)
     {
        /*  $repo = $this->getDoctrine()->getRepository(Article::class); */
+        $paginator->setEntityClass(Article::class)
+                  ->setLimit(2)
+                  ->setPage($page);
 
-        $articles = $repo->findAll();
+        /* $articles = $repo->findAll(); */
 
         return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
-            'articles' => $articles
+            'paginator' => $paginator
         ]);
     }
 

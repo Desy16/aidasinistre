@@ -1,0 +1,52 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Modification de l'association numéro {{ association.id}} {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center my-5">Modification de l'association : {{ association.name }}</h1>
+
+            {{ form_start(form_edit)}}
+                
+                    
+                        <div class="alert alert-light">
+                            <h2 class="text-center">
+                                <i class="fas fa-info-circle"></i>
+                                Informations de l'association
+                            </h2>
+
+                            <div class="row">
+                                <div class="col">
+                                    <hr>
+                                    {{ form_row(form_edit.name)}}
+                                    {{ form_row(form_edit.address)}}
+                                    {{ form_row(form_edit.postalCode)}}
+                                </div>
+                                
+                                <div class="col">
+                                    <hr>
+                                    {{ form_row(form_edit.city)}}
+                                    {{ form_row(form_edit.phone)}}
+                                </div>
+                        </div>
+
+                    </div>
+
+                   
+                
+                
+                <div class="alert alert-secondary clearfix">
+                    <h2 class="alert-heading">Modifier une association</h2>
+                    <p>Vous êtes sur le point de créer l'association : <strong>{{ association.name }}</strong></p>
+                    <button type="submit" class="btn btn-primary float-right">
+                        <i class="fas fa-check"></i>
+                        Enregistrer les modifications de l'association
+                    </button>
+                </div>
+            {{ form_end(form_edit)}}
+        
+    </div>
+
+
+{% endblock %}
