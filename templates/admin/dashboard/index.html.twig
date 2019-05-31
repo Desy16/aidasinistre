@@ -1,0 +1,69 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Tableau de bord{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col">
+                <div class="card bg-primary text-white mb-3 text-center">
+                    <div class="card-body">
+                         <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-users fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{# {{ stats.users }} #} 1 Users (admin) </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-primary text-white mb-3 text-center">
+                    <div class="card-body">
+                         <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-newspaper fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.articles }} Articles</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card bg-dark text-white mb-3 text-center">
+                    <div class="card-body">
+                         <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-hands-helping fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.associations }} Associations</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card bg-warning text-white mb-3 text-center">
+                    <div class="card-body">
+                         <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-id-card fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.contacts }} Contacts</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Cocur\Slugify\Slugify;
 
 /**
@@ -20,26 +21,38 @@ class Association
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3, max=100, minMessage="Le nom d'une association ne peut pas faire moins de trois lettres")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3, max=100, minMessage="Le nom d'une ville ne peut pas faire moins de trois lettres")
      */
     private $city;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3, max=100, minMessage="L'adresse ne peut pas faire moins de trois lettres")
      */
     private $address;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3, max=100, minMessage="Le code postale ne peut pas faire moins de trois lettres")
      */
     private $postalCode;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Regex(
+     * pattern="/[0-9]{10}/"
+     * )
      */
     private $phone;
 
@@ -47,6 +60,13 @@ class Association
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     */
+    private $email;
 
     /**
      * Permet d'initialiser le slug de l'association
@@ -136,6 +156,18 @@ class Association
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

@@ -10,6 +10,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                {# <th>Auteur</th> #}
                 <th>Titre</th>
                 <th>Adresse</th>
                 <th>Introduction</th>
@@ -23,6 +24,7 @@
             {% for article in paginator.data %}
                 <tr>
                     <td>{{ article.id }}</td>
+                    {# <td>{{ article.author.user }}</td> #}
                     <td>{{ article.title }}</td>
                     <td>{{ article.slug }}</td>
                     <td>{{ article.introduction }}</td>

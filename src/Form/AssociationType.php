@@ -17,7 +17,8 @@ class AssociationType extends ApplicationType
             ->add('address', TextType::class, $this->getConfiguration("Adresse", "Adresse de l'association"))
             ->add('postalCode', TextType::class, $this->getConfiguration("Code postal ", "Code postal de l'association"))
             ->add('city', TextType::class, $this->getConfiguration("Ville", "Villle de l'association"))
-            ->add('phone', TextType::class, $this->getConfiguration("Téléphone", "Téléphone de l'association"));
+            ->add('phone', TextType::class, $this->getConfiguration("Téléphone", "Téléphone de l'association"))
+            ->add('email', TextType::class, $this->getConfiguration("Email", "Email de l'association"));
         ;
     }
 

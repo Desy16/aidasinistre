@@ -25,7 +25,7 @@ class ArticleController extends AbstractController
     {
        /*  $repo = $this->getDoctrine()->getRepository(Article::class); */
         $paginator->setEntityClass(Article::class)
-                  ->setLimit(2)
+                  ->setLimit(6)
                   ->setPage($page);
 
         /* $articles = $repo->findAll(); */

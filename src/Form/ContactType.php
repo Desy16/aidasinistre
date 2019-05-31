@@ -22,7 +22,7 @@ class ContactType extends ApplicationType
             ->add('email', EmailType::class, $this->getConfiguration("Email", "vous@aidasinistre.com"))
             ->add('message', TextareaType::class, $this->getConfiguration("Message", "Ex...."))
             ->add('qualification', ChoiceType::class, $this->getConfigurationQualif())
-            ->add('sinister', ChoiceType::class, $this->getConfigurationSinistre())
+            ->add('sinister', ChoiceType::class, $this->getConfigurationSinistre("Sinistre"))
         ;
 
     }
@@ -39,10 +39,12 @@ class ContactType extends ApplicationType
      * Permet la configuration du champ Sinistre !
      * 
      */
-    private function getConfigurationSinistre()
+    private function getConfigurationSinistre($label)
     {
        return
        [
+           'label' => $label,
+
             'choices' => [
 
                '--Veuillez choisir un sinistre--' => 'null',

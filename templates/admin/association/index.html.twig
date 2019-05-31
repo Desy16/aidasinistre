@@ -16,6 +16,7 @@
                 <th>Code postale</th>
                 <th>Ville</th>
                 <th>Téléphone</th>
+                <th>Email</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@
                     <td>{{ association.postalCode }}</td>
                     <td>{{ association.city }}</td>
                     <td>{{ association.phone }}</td>
+                    <td>{{ association.email }}</td>
                     <td>
                         <a href="{{ path('admin_association_create') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i></a>
                         <a href="{{ path('admin_association_edit', {'id': association.id }) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>

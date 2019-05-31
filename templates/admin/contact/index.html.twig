@@ -10,6 +10,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                {# <th>Nom de l'association</th> #}
                 <th>Nom(s)</th>
                 <th>Prenom(s)</th>
                 <th>Téléphone</th>
@@ -28,6 +29,7 @@
             {% for contact in paginator.data %}
                 <tr>
                     <td>{{ contact.id }}</td>
+                   {#  <td>{{ contact.association.name}}</td> #}
                     <td>{{ contact.lastName }}</td>
                     <td>{{ contact.firstName }}</td>
                     <td>{{ contact.phone }}</td>
